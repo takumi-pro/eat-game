@@ -1,0 +1,37 @@
+[25-Jul-2020 16:02:43 Asia/Tokyo] PHP Notice:  Undefined variable: img in /Applications/MAMP/htdocs/eat-game/index.php on line 38
+[25-Jul-2020 16:03:00 Asia/Tokyo] PHP Notice:  Undefined variable: img in /Applications/MAMP/htdocs/eat-game/index.php on line 38
+[25-Jul-2020 16:03:19 Asia/Tokyo] PHP Notice:  Undefined variable: img in /Applications/MAMP/htdocs/eat-game/index.php on line 38
+[25-Jul-2020 16:09:50 Asia/Tokyo] PHP Notice:  Undefined variable: img in /Applications/MAMP/htdocs/eat-game/index.php on line 38
+[25-Jul-2020 16:09:50 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on int in /Applications/MAMP/htdocs/eat-game/index.php:114
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/eat-game/index.php on line 114
+[25-Jul-2020 16:11:29 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on int in /Applications/MAMP/htdocs/eat-game/index.php:113
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/eat-game/index.php on line 113
+[25-Jul-2020 16:12:44 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on int in /Applications/MAMP/htdocs/eat-game/index.php:113
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/eat-game/index.php on line 113
+[25-Jul-2020 16:12:47 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on int in /Applications/MAMP/htdocs/eat-game/index.php:113
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/eat-game/index.php on line 113
+[25-Jul-2020 16:13:20 Asia/Tokyo] PHP Notice:  Undefined index: obj in /Applications/MAMP/htdocs/eat-game/index.php on line 105
+[25-Jul-2020 16:13:20 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on null in /Applications/MAMP/htdocs/eat-game/index.php:105
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/eat-game/index.php on line 105
+[25-Jul-2020 16:15:32 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getName() on int in /Applications/MAMP/htdocs/eat-game/index.php:114
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/eat-game/index.php on line 114
+[25-Jul-2020 20:07:04 Asia/Tokyo] PHP Notice:  Undefined variable: str in /Applications/MAMP/htdocs/eat-game/index.php on line 49
+[25-Jul-2020 20:08:34 Asia/Tokyo] PHP Notice:  Undefined variable: str in /Applications/MAMP/htdocs/eat-game/index.php on line 49
+[25-Jul-2020 20:12:50 Asia/Tokyo] PHP Notice:  Undefined index: huamn in /Applications/MAMP/htdocs/eat-game/index.php on line 80
+[25-Jul-2020 20:12:50 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function getFullness() on null in /Applications/MAMP/htdocs/eat-game/index.php:80
+Stack trace:
+#0 /Applications/MAMP/htdocs/eat-game/index.php(101): hangry()
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/eat-game/index.php on line 80

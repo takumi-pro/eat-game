@@ -1,0 +1,60 @@
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+.wrap{
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 34px;
+}
+.inner{
+    border: 2px solid #333;
+    padding: 20px;
+    height: auto;
+}
+p{
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+}
+.img-wrap{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+.deg{
+    font-size: 18px;
+    font-weight: 900;
+}
+.par{
+    margin-left: 5px;
+}
+form{
+    margin-top: 35px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+input{
+    display: inline-block;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 12px 30px;
+}
+.left{
+    margin-right: -24px;
+}
+.right{
+    margin-left: -24px;
+}
+.fullness{
+    text-align: center;
+    margin: 10px;
+}
+.count{
+    text-align: center;
+    margin: 10px;
+}

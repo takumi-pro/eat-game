@@ -28,7 +28,7 @@ class Obj{
         return $this->img;
     }
     public function poison(){
-        if(mt_rand(0,$this->danger)){
+        if(probability($this->danger) == true){
             $_SESSION['gameover'] = true;
         }
     }
@@ -59,10 +59,10 @@ class Human{
 }
 
 //インスタンス生成
-$objs[] = new Obj('牛丼',50,35,'food1.png');
-$objs[] = new Obj('カレー',65,30,'food2.png');
-$objs[] = new Obj('寿司',44,20,'food3.png');
-$objs[] = new Obj('クレヨン',90,10,'food4.png');
+$objs[] = new Obj('牛丼',2,35,'food1.png');
+$objs[] = new Obj('カレー',20,30,'food2.png');
+$objs[] = new Obj('寿司',35,20,'food3.png');
+$objs[] = new Obj('クレヨン',67,10,'food4.png');
 $human = new Human(50,100);
 
 function createObj(){
@@ -85,6 +85,14 @@ function gameOver(){
 function hangry(){
     $_SESSION['human']->setFullness($_SESSION['human']->getFullness()-10);
 }
+function probability($num){
+    if(rand(1,100) < (int)$num){
+        $result = true;
+    }else{
+        $result = false;
+    }
+    return $result;
+}
 
 //POST送信があった場合
 if(!empty($_POST)){
@@ -101,13 +109,18 @@ if(!empty($_POST)){
             createObj();
             $_SESSION['eat_count'] += 1;
 
+            $_SESSION['obj']->poison();
             //満腹度が0以下になった場合
-            if($_SESSION['human']->getFullness() <= 0){
+            if($_SESSION['human']->getFullness() == 0){
                 gameOver();
             }
-            $_SESSION['obj']->poison();
+            
             //やめとくボタン
         }elseif($nothankFlg){
+            //満腹度が0以下になった場合
+            if($_SESSION['human']->getFullness() == 0){
+                gameOver();
+            }
             createObj();
             hangry();
         }else{
@@ -131,8 +144,9 @@ if(!empty($_POST)){
     <div class="wrap">
         <div class="inner">
         <?php if(empty($_SESSION)){ ?>
+            <p>食べる？食べない？</p>
             <form action="" method="post">
-                <p>eat-game</p>
+                
                 
                 <input type="submit" name="start" value="ゲーム開始">
             </form>
@@ -143,17 +157,20 @@ if(!empty($_POST)){
             </form>
         <?php }else{ ?>
             <p><?php echo $_SESSION['obj']->getName(); ?></p>
-            <div style="width:100px;height:100px;"><img style="width:100%;height:100%;" src="<?php echo 'img/'.$_SESSION['obj']->getImg(); ?>" alt=""></div>
+            <div class="img-wrap"><img style="width:100%;height:100%;" src="<?php echo 'img/'.$_SESSION['obj']->getImg(); ?>" alt=""></div>
             
-            <span>危険度</span><span><?php echo $_SESSION['obj']->getDanger(); ?>%</span>
-            <span>満腹度</span><span><?php echo $_SESSION['obj']->getFullness(); ?></span><br>
-            <form action="" method="post">
-                <input type="submit" name="eat" value="食べる">
-                <input type="submit" name="no_thank" value="やめとく">
+            <div style="margin-top:16px;" class="flex">
+                <div><span class="deg">危険度</span><span class="par"><?php echo $_SESSION['obj']->getDanger(); ?>%</span></div>
+                <div><span class="deg">満腹度</span><span class="par"><?php echo $_SESSION['obj']->getFullness(); ?>%</span></div>
+            </div>
+            <form class="flex" action="" method="post">
+                <input class="left" type="submit" name="eat" value="食べる">
+                <input cla="right" type="submit" name="no_thank" value="やめとく">
             </form>
 
+            <div class="fullness"><span>お腹:</span><span><?php echo $_SESSION['human']->getFullness(); ?></span></div>
+            <div class="count"><span>食べ物カウント:</span><span><?php echo $_SESSION['eat_count']; ?></span></div>
             
-            <span>お腹</span><span><?php echo $_SESSION['human']->getFullness(); ?></span>
         <?php } ?>
         </div>
     </div>
